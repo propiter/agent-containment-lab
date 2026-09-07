@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "Agent Containment Lab"
+message: "Si usas este proyecto en investigación, por favor cítalo."
+type: software
+authors:
+  - alias: propiter
+    name: "propiter"
+repository-code: "https://github.com/propiter/agent-containment-lab"
+abstract: >-
+  A sealed-lab research harness to study emergent multi-agent (LLM) coordination
+  and containment, reproducing the dynamics of the 2026 OpenAI–Hugging Face
+  incident against self-hosted, intentionally-vulnerable targets on an air-gapped
+  network. Defensive / AI-safety use only.
+keywords:
+  - ai-safety
+  - llm-agents
+  - containment
+  - multi-agent
+  - reward-hacking
+  - security-research
+license: MIT

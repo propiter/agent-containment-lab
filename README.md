@@ -1,5 +1,10 @@
 # Agent Containment Lab
 
+[![ci](https://github.com/propiter/agent-containment-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/propiter/agent-containment-lab/actions/workflows/ci.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![discussions](https://img.shields.io/github/discussions/propiter/agent-containment-lab)](https://github.com/propiter/agent-containment-lab/discussions)
+[![python](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/)
+
 > **Un banco de pruebas de investigación para estudiar la coordinación EMERGENTE de enjambres de
 > agentes LLM y su CONTENCIÓN — en un laboratorio sellado, sin salida a internet, contra objetivos
 > vulnerables que tú mismo hospedas.** Reproduce la *dinámica* del incidente OpenAI–Hugging Face de
@@ -142,11 +147,29 @@ Detalle en [prompts/nota-orquestacion.md](prompts/nota-orquestacion.md).
 
 ---
 
+## 💬 Comparte lo que descubriste
+
+¿Corriste un experimento y viste algo interesante — el canal emergiendo más rápido de lo esperado, una
+curva de participación rara, una detección que se te escapó? **Cuéntalo:**
+
+- **[Discussions · Show and tell](https://github.com/propiter/agent-containment-lab/discussions/categories/show-and-tell)** — para compartir hallazgos y charlar.
+- Plantilla **🔬 Hallazgo** en [issues](https://github.com/propiter/agent-containment-lab/issues/new/choose) — para reportar algo reproducible.
+- Los hallazgos confirmados se recogen en **[docs/FINDINGS.md](docs/FINDINGS.md)**.
+
+Un buen hallazgo es reproducible: comando exacto + motor/modelo + salida de `analyze.py`.
+
 ## Contribuir
 
-Ideas bienvenidas: nuevos targets vulnerables (self-hosted), nuevas detecciones de contención en
-`observer.py`, adaptadores de motor, métricas en `analyze.py`. Ver [CONTRIBUTING.md](CONTRIBUTING.md).
-Todo aporte debe respetar el principio de sellado y no añadir capacidad de targeting real ni evasión.
+Ideas bienvenidas y con puntos de entrada listos (busca las etiquetas **good first issue** y
+**help wanted**):
+
+- 🎯 nuevos **targets** vulnerables self-hosted (una vuln clara, o una cadena de dos)
+- 🛡️ nuevas **detecciones de contención** en `observer.py`
+- 🔌 nuevos **adaptadores de motor** en `adapters.py`
+- 📊 nuevas **métricas** en `analyze.py`
+
+Ver [CONTRIBUTING.md](CONTRIBUTING.md). Todo aporte respeta el principio de sellado: sin capacidad de
+targeting real, evasión ni auto-propagación ([SECURITY.md](SECURITY.md)).
 
 ## Licencia
 

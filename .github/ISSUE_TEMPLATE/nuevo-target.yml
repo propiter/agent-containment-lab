@@ -1,0 +1,29 @@
+name: "🎯 Proponer un target vulnerable"
+description: Propón un objetivo self-hosted deliberadamente vulnerable para el lab.
+title: "[target] "
+labels: ["target", "help wanted"]
+body:
+  - type: input
+    id: nombre
+    attributes:
+      label: Nombre del target
+      placeholder: "ejemplo-deserializacion"
+    validations:
+      required: true
+  - type: textarea
+    id: vuln
+    attributes:
+      label: Vulnerabilidad(es)
+      description: Una vuln clara, o una CADENA de dos (más interesante para medir vulnerability chaining).
+      placeholder: "1) lectura arbitraria de archivos -> filtra token; 2) SSTI gated por ese token -> RCE"
+    validations:
+      required: true
+  - type: checkboxes
+    id: reglas
+    attributes:
+      label: Reglas (SECURITY.md)
+      options:
+        - label: Es self-hosted y deliberadamente vulnerable (corre en la red aislada del lab).
+          required: true
+        - label: No incluye exploits armados contra software real de terceros.
+          required: true

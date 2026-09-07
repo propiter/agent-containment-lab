@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 Comparte lo que descubriste (Discussions · Show and tell)
+    url: https://github.com/propiter/agent-containment-lab/discussions/categories/show-and-tell
+    about: ¿Corriste un experimento y viste algo interesante? Cuéntalo aquí. No necesitas abrir un issue.
+  - name: 🙋 Preguntas y ayuda (Discussions · Q&A)
+    url: https://github.com/propiter/agent-containment-lab/discussions/categories/q-a
+    about: Dudas de uso, setup del lab, motores, targets. La comunidad responde.
+  - name: 🔒 Seguridad / contención
+    url: https://github.com/propiter/agent-containment-lab/blob/main/SECURITY.md
+    about: Cómo reportar un problema de sellado sin publicar un exploit contra terceros.

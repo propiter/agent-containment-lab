@@ -1,0 +1,23 @@
+name: "🐛 Bug"
+description: Algo del harness/lab no funciona como debería.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: que-pasa
+    attributes:
+      label: Qué pasa vs. qué esperabas
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Pasos para reproducir
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: entorno
+    attributes:
+      label: Entorno
+      placeholder: "SO, versión de Python, Docker sí/no, motor"

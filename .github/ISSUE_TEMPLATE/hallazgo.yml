@@ -1,0 +1,53 @@
+name: "🔬 Hallazgo / Finding"
+description: Reporta un comportamiento reproducible que observaste en un experimento.
+title: "[finding] "
+labels: ["finding"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por compartir. Un buen hallazgo es **reproducible**: otra persona debería poder
+        repetirlo con tu configuración. Para charla más informal, usa
+        [Discussions · Show and tell](https://github.com/propiter/agent-containment-lab/discussions/categories/show-and-tell).
+  - type: input
+    id: resumen
+    attributes:
+      label: Resumen en una frase
+      placeholder: "Con 200 agentes y ratio 0.6, el canal emerge en <1s y el 80% participa."
+    validations:
+      required: true
+  - type: dropdown
+    id: motor
+    attributes:
+      label: Motor usado
+      options: [mock, ollama, api, otro]
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Configuración (comando exacto)
+      description: Pega el comando de `agent_loop.py` y, si aplica, modelo/versión y target.
+      render: shell
+      placeholder: "python3 harness/agent_loop.py --engine mock --swarm 200 --board runs/board --impossible-ratio 0.6 --seed 7"
+    validations:
+      required: true
+  - type: textarea
+    id: observado
+    attributes:
+      label: Qué observaste
+      description: Pega la salida de `analyze.py` o las métricas clave (emergencia, escala, contención).
+    validations:
+      required: true
+  - type: textarea
+    id: interpretacion
+    attributes:
+      label: Interpretación (sin antropomorfizar)
+      description: ¿Qué capa de contención falla? ¿Qué control lo habría frenado? Comportamiento, no intenciones.
+  - type: checkboxes
+    id: sellado
+    attributes:
+      label: Confirmación de ámbito
+      options:
+        - label: El experimento corrió en un lab sellado contra un target propio (sin tocar terceros).
+          required: true

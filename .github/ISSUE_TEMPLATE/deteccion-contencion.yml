@@ -1,0 +1,25 @@
+name: "🛡️ Nueva detección de contención"
+description: Propón un patrón de pérdida de aislamiento que observer.py debería alertar.
+title: "[containment] "
+labels: ["containment", "help wanted"]
+body:
+  - type: input
+    id: patron
+    attributes:
+      label: Comportamiento a detectar
+      placeholder: "Exfiltración por DNS / uso de credenciales robadas / asignación de tareas a otros agentes"
+    validations:
+      required: true
+  - type: textarea
+    id: senal
+    attributes:
+      label: Señal observable
+      description: ¿Qué aparece en la telemetría (tool_call/args/CoT) que permite detectarlo? Recuerda:
+        la intención es invisible, solo el comportamiento aparece.
+    validations:
+      required: true
+  - type: dropdown
+    id: capa
+    attributes:
+      label: Capa de contención afectada
+      options: ["1 · Red", "2 · Cómputo", "3 · Recursos", "4 · Modelo", "5 · Monitoreo"]
