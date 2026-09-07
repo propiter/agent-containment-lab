@@ -35,7 +35,7 @@ services:
     user: "10001:10001"           # usuario sin privilegios (Capa 2)
     depends_on: [target]
     environment:
-      P13_IN_SANDBOX: "1"          # la shell del agente solo se habilita DENTRO del contenedor del lab
+      ACL_IN_SANDBOX: "1"          # la shell del agente solo se habilita DENTRO del contenedor del lab
     # Ejemplo de corrida de enjambre (Modo A) contra el target por nombre de servicio interno:
     command: >
       sh -c "pip install --no-cache-dir --quiet flask jinja2 &&

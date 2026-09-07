@@ -117,7 +117,7 @@ def _host(url: str) -> str:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Lanzador de agentes para el lab de contención (P13).")
+    ap = argparse.ArgumentParser(description="Lanzador de agentes para el lab de contención.")
     ap.add_argument("--engine", default="mock", help="mock | ollama | api")
     ap.add_argument("--target", default="http://localhost:8080", help="URL del objetivo (dentro del lab)")
     ap.add_argument("--agent-id", default="A1")

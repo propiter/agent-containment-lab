@@ -137,8 +137,8 @@ class MockEngine:
 # ---------------------------------------------------------------------------
 class OllamaEngine:
     name = "ollama"
-    MODEL = os.environ.get("P13_OLLAMA_MODEL", "llama3.1")
-    HOST = os.environ.get("P13_OLLAMA_HOST", "http://localhost:11434")
+    MODEL = os.environ.get("ACL_OLLAMA_MODEL", "llama3.1")
+    HOST = os.environ.get("ACL_OLLAMA_HOST", "http://localhost:11434")
 
     def __init__(self, agent_id: str, system: str = "", **_: object) -> None:
         self.agent_id = agent_id
@@ -166,18 +166,18 @@ class ApiEngine:
     def __init__(self, agent_id: str, system: str = "", **_: object) -> None:
         self.agent_id = agent_id
         self.system = system
-        self.provider = os.environ.get("P13_API_PROVIDER", "openai")  # openai | anthropic
-        self.model = os.environ.get("P13_API_MODEL", "gpt-4o-mini")
-        self.base = os.environ.get("P13_API_BASE", "https://api.openai.com/v1")
-        self.key = os.environ.get("P13_API_KEY", "")
+        self.provider = os.environ.get("ACL_API_PROVIDER", "openai")  # openai | anthropic
+        self.model = os.environ.get("ACL_API_MODEL", "gpt-4o-mini")
+        self.base = os.environ.get("ACL_API_BASE", "https://api.openai.com/v1")
+        self.key = os.environ.get("ACL_API_KEY", "")
         if not self.key:
-            raise SystemExit("ApiEngine: define P13_API_KEY (y opcional P13_API_PROVIDER/MODEL/BASE).")
+            raise SystemExit("ApiEngine: define ACL_API_KEY (y opcional ACL_API_PROVIDER/MODEL/BASE).")
 
     def step(self, history: list[dict]) -> str:
         import urllib.request
 
         if self.provider == "anthropic":
-            url = os.environ.get("P13_API_BASE", "https://api.anthropic.com/v1") + "/messages"
+            url = os.environ.get("ACL_API_BASE", "https://api.anthropic.com/v1") + "/messages"
             headers = {
                 "x-api-key": self.key,
                 "anthropic-version": "2023-06-01",

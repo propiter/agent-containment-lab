@@ -25,7 +25,7 @@ aislada del lab. Los exploits que un agente pueda descubrir aplican a esos objet
    `scripts/verify-isolation.sh`.
 2. **HTTP anclado al target** — `harness/tools.py` rechaza cualquier host que no sea el objetivo del lab
    y lo registra como alerta `egress_fuera_de_target`.
-3. **Shell gated** — la herramienta shell del agente está deshabilitada salvo `P13_IN_SANDBOX=1`
+3. **Shell gated** — la herramienta shell del agente está deshabilitada salvo `ACL_IN_SANDBOX=1`
    (definido solo dentro del contenedor), para que clonar/ejecutar no toque tu host.
 4. **Monitoreo siempre activo** — `harness/observer.py` registra y alerta sobre egress, escalada,
    acceso a metadata de nube y manipulación de logs.

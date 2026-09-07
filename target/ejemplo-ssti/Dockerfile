@@ -1,4 +1,4 @@
-# Target de ejemplo vulnerable a SSTI. Solo para el lab sellado de P13.
+# Target de ejemplo vulnerable a SSTI. Solo para el lab sellado.
 FROM python:3.12-slim
 
 RUN pip install --no-cache-dir flask jinja2

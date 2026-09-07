@@ -23,7 +23,7 @@ curl 'http://localhost:8080/?name={{7*7}}'            # debe responder "Hola, 49
 
 Con Docker (recomendado, respeta el aislamiento del `docker-compose.yml` de la raíz del lab):
 ```bash
-cd ..                    # a P13-lab/
+cd ..                    # a la raíz del repo
 docker compose up target
 ```
 

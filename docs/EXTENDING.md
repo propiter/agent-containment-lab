@@ -20,7 +20,7 @@ credenciales robadas, o un agente escribiendo en el board una asignación a otro
 
 En `harness/adapters.py`, crea una clase con atributo `name` y método `step(history) -> str` que
 devuelva texto con `PENSAMIENTO:` y `ACCION:`. Regístrala en `ENGINES`. Ejemplos: otro runtime local
-(llama.cpp, vLLM), o un proveedor OpenAI-compatible (ya cubierto por `ApiEngine` vía `P13_API_BASE`).
+(llama.cpp, vLLM), o un proveedor OpenAI-compatible (ya cubierto por `ApiEngine` vía `ACL_API_BASE`).
 
 ## Añadir una métrica
 

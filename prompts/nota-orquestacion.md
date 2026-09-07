@@ -1,7 +1,7 @@
 # Nota sobre la orquestación — por qué NO hay un "prompt maestro"
 
-Pedro preguntó: *"¿cómo sería el prompt inicial que le dieron a ese modelo para que replicara esos
-700 agentes?"*. La respuesta honesta y verificada:
+Una pregunta frecuente: *"¿cuál fue el prompt inicial que le dieron al modelo para que creara esos
+~700 agentes?"*. La respuesta honesta y verificada:
 
 ## No hubo tal prompt.
 

@@ -19,6 +19,8 @@ targeting, evasion, or self-propagation. See [SECURITY.md](SECURITY.md).
 
 ---
 
+![demo: enjambre emergente + contención](docs/media/demo.gif)
+
 ## ⚠️ Uso responsable (léelo antes de clonar)
 
 Este proyecto existe para **entender y contener** el comportamiento de agentes autónomos, no para
@@ -28,7 +30,7 @@ atacar a nadie. Reglas que el propio código hace cumplir:
 - **El objetivo es SIEMPRE tuyo** y vive dentro del lab (apps deliberadamente vulnerables incluidas).
 - **Las herramientas del agente están ancladas al target del lab.** Cualquier intento de contactar otro
   host se rechaza y se registra como alerta.
-- **La shell del agente está deshabilitada fuera del contenedor** (requiere `P13_IN_SANDBOX=1`), para
+- **La shell del agente está deshabilitada fuera del contenedor** (requiere `ACL_IN_SANDBOX=1`), para
   que clonar y ejecutar el repo no corra nada en tu máquina.
 
 No contiene exploits armados contra software de terceros ni técnicas de evasión de detección. Apuntar
@@ -98,7 +100,7 @@ docker compose up --build
 bash scripts/verify-isolation.sh
 
 # 3. Con un modelo local (Ollama), Modo A contra el target de ejemplo:
-P13_OLLAMA_MODEL=llama3.1 python3 harness/agent_loop.py \
+ACL_OLLAMA_MODEL=llama3.1 python3 harness/agent_loop.py \
     --engine ollama --swarm 5 --target http://target:8080 --board runs/board
 ```
 

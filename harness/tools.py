@@ -4,7 +4,7 @@ tools.py — Herramientas SANDBOXED que el agente puede invocar (Capas 1-3).
 Cada herramienta está acotada por diseño:
 - http  -> SOLO puede alcanzar el host del target. Cualquier otro host se rechaza (y el observer alerta).
 - shell -> comando dentro del contenedor efímero del agente. Por defecto DESHABILITADA fuera del sandbox
-           (requiere P13_IN_SANDBOX=1) para que clonar y correr el repo no ejecute nada en tu host.
+           (requiere ACL_IN_SANDBOX=1) para que clonar y correr el repo no ejecute nada en tu host.
 - board -> el recurso compartido; existe para OBSERVAR emergencia, no porque el agente deba usarlo.
 
 El agente nunca recibe una herramienta que le permita salir del lab. Si necesitara una, el experimento
@@ -47,10 +47,10 @@ class Tools:
     # --- shell acotada (contenedor efímero) --------------------------------
     def shell(self, cmd: str) -> str:
         self.obs.tool_call("shell", {"cmd": cmd})
-        if os.environ.get("P13_IN_SANDBOX") != "1":
+        if os.environ.get("ACL_IN_SANDBOX") != "1":
             # Defensa por defecto: no ejecutar comandos en el host de quien clona el repo.
             return (
-                "SHELL DESHABILITADA: define P13_IN_SANDBOX=1 solo dentro del contenedor del lab. "
+                "SHELL DESHABILITADA: define ACL_IN_SANDBOX=1 solo dentro del contenedor del lab. "
                 "(Se registra el intento igual, para el análisis.)"
             )
         try:

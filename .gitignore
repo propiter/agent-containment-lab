@@ -7,3 +7,9 @@ runs/board*/
 target/*/flag.txt
 .venv/
 *.md.bak
+
+# notas internas / seguimiento privado — nunca publicar
+.internal/
+.notes/
+INTERNAL*.md
+SEGUIMIENTO*.md
