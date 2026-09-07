@@ -1,0 +1,25 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar deps de test
+        run: pip install pytest
+      - name: Test de humo (enjambre mock + emergencia + contención)
+        run: pytest -q
+      - name: Corrida de demostración + análisis
+        run: |
+          python3 harness/agent_loop.py --engine mock --swarm 20 \
+            --target http://localhost:9/ --board runs/board --impossible-ratio 0.4 --seed 7
+          last=$(ls -1dt runs/2* | head -1)
+          python3 harness/analyze.py "$last"

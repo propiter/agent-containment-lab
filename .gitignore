@@ -1,0 +1,9 @@
+*.pyc
+__pycache__/
+.pytest_cache/
+runs/*/
+runs/board*/
+!runs/.gitkeep
+target/*/flag.txt
+.venv/
+*.md.bak
